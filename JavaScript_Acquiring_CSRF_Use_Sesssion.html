@@ -1,0 +1,15 @@
+{% csrf_token %}
+
+<script type="text/javascript">
+
+/* JavaScript Acquiring CSRF Use Sesssion. */
+/*
+Acquiring the token if CSRF_USE_SESSIONS or CSRF_COOKIE_HTTPONLY is True.
+If you activate CSRF_USE_SESSIONS or CSRF_COOKIE_HTTPONLY, you must include the CSRF token in your HTML and read the token from the DOM with JavaScript:
+*/
+
+// using jQuery
+
+var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+
+</script>
