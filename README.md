@@ -13,7 +13,8 @@ Requests via ‘unsafe’ methods, such as POST, PUT, and DELETE, can then be pr
 
 How to use it: To take advantage of CSRF protection in your views, follow these steps: 
 
-1. The CSRF middleware is activated by default in the MIDDLEWARE setting. If you override that setting, remember that 'django.middleware.csrf.CsrfViewMiddleware' should come before any view middleware that assume that CSRF attacks have been dealt with. If you disabled it, which is not recommended, you can use csrf_protect() on particular views you want to protect. 
+1. The CSRF middleware is activated by default in the MIDDLEWARE setting. If you override that setting, remember that 'django.middleware.csrf.CsrfViewMiddleware' should come before any view middleware that assume that CSRF attacks have been dealt with. 
+If you disabled it, which is not recommended, you can use csrf_protect() on particular views you want to protect. 
 
 2. In any template that uses a POST form, use the csrf_token tag inside the &lt;form> element if the form is for an internal URL, e.g.: &lt;form method="post">{% csrf_token %} This should not be done for POST forms that target external URLs, since that would cause the CSRF token to be leaked, leading to a vulnerability.
 
